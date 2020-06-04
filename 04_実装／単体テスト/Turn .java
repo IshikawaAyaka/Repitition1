@@ -1,4 +1,4 @@
-package Sanmoku;
+
 
 public class Turn {
 	
@@ -6,27 +6,32 @@ public class Turn {
 
 	private Board board;
 	
-	private int x;
-	private int y;
-	private Mark mark;
 	
 	public Turn(Player player) {
 		this.player = player;
 	}
 
 	public void setMark() {
-		board.setMark(x,y,player.getMark());
+		
+		board.setMark(player.getMark());
+
 	}
 
 	public int[] requestXY(Board board) {
+		int X;
+		int Y;
 		this.board = board;
+		
 		int[] a ;
+		
 		while(true){
-			a = player.setXY();
-			this.x = a[0];
-			this.y = a[1];
-			if(board.canInput(x,y) == true) {
+			 a = player.setXY();
+			X = a[0];
+			Y = a[1];
+			if(board.canInput(X,Y) == true) {
 				break;
+			}else {
+				System.out.println("Šù‚É’u‚©‚ê‚Ä‚¢‚Ü‚·");
 			}
 		}
 		
