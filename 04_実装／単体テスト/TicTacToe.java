@@ -55,8 +55,8 @@ public class TicTacToe {
 			//プレイヤーの交代
 			player = playerChange(player);
 			
-			showHistory();
 		}
+		showHistory();
 	}
 
 	public void showWinner(Player player) {
@@ -68,11 +68,11 @@ public class TicTacToe {
 	public void showHistory() {
 		System.out.println("<ターン履歴>");
 		for (Turn t : turns) {
-			System.out.print(t.getPlayer.getName + ":(" + t.getX + " , " + t.getY + ")");
-			if(t.getPlayer.getMark == Mark.CIRCLE) {
-				System.out.print("○");
+			System.out.print(t.getPlayer().getName() + ":(" + t.getX() + "," + t.getY() + ")");
+			if(t.getPlayer().getMark() == Mark.CIRCLE) {
+				System.out.println("○");
 			}else {
-				System.out.print("×");
+				System.out.println("×");
 			}
 		}
 	}

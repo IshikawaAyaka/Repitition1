@@ -1,5 +1,4 @@
 package tictactoe;
-
 public class Line {
 	private Square[] squares = new Square[3];
 

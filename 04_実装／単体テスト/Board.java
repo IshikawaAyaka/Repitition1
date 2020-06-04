@@ -1,5 +1,4 @@
 package tictactoe;
-
 public class Board {
 	private Line[] lines = new Line[8];
 	private Square[][] squares = new Square[3][3];
@@ -27,14 +26,14 @@ public class Board {
 		lines[5].setLine(squares[2][0], squares[2][1], squares[2][2]);
 		// 斜めのライン ２本
 		lines[6].setLine(squares[0][0], squares[1][1], squares[2][2]);
-		lines[7].setLine(squares[0][2], squares[1][1], squares[0][2]);
+		lines[7].setLine(squares[2][0], squares[1][1], squares[0][2]);
 	}
 
 	// 座標を指定し、マークを記入できるか確認する。できる=true,できない=false
 	public boolean canInput(int x, int y) {
 		boolean result = false;
 		if (x < 1 || y < 1 || 3 < x || 3 < y) {
-			System.out.println("範囲内の座標を選択してください");
+			System.out.println("1から3の数字を選択してください");
 			return result;
 		} else {
 			result = squares[x - 1][y - 1].canPlace();
@@ -75,23 +74,26 @@ public class Board {
 	// getSquare()ってシーケンス図に書いてあるけど、getMark();を使いました合ってる？
 	public void showBoard() {
 
-		System.out.println("---------");
+		System.out.println("-------");
 		for (int i = 1; i <= 3; i++) {
-			System.out.println("|");
 			for (int j = 1; j <= 3; j++) {
 				// １マスずつマークを取得。オブジェクトを上記２次元配列で指定する。
 				// これ座標指定の情報足りてる？getSquare で出して、オブジェクトから座標を入れ替える必要はあるか。
-				Mark mark = squares[i][j].getMark();
+				Mark mark = squares[i-1][j-1].getMark();
 				if (mark == Mark.CIRCLE) {
-					System.out.println("○");
+					System.out.print("|");
+					System.out.print("○");
 				} else if (mark == Mark.CROSS) {
-					System.out.println("×");
+					System.out.print("|");
+					System.out.print("×");
 				} else { // NONEの場合
-					System.out.println(" ");
+					System.out.print("|");
+					System.out.print(" ");
 				}
-				System.out.println("|");
+				
 			}
-			System.out.println("---------");
+			System.out.println("|");
+			System.out.println("-------");
 		}
 	}
 

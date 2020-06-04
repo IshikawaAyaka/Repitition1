@@ -1,10 +1,12 @@
+package tictactoe;
+
 public class Square {
 
 	private int x;
 
 	private int y;
 
-	private Mark mark;
+	private Mark mark = Mark.NONE;
 
 	public int getX() {
 		return x;
@@ -19,7 +21,7 @@ public class Square {
 	}
 
 	public boolean canPlace() {
-		if(mark==null) {
+		if(mark == Mark.NONE) {
 			return true;
 		}else {
 			return false;
