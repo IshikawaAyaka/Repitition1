@@ -9,6 +9,10 @@ public class Player {
 
 	private String playerName;
 
+	public Player() {
+		
+	}
+	
 	public Player(Mark mark, String name) {
 		this.playerName = name;
 		this.mark = mark;
