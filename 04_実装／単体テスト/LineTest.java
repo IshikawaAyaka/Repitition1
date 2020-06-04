@@ -17,7 +17,7 @@ public class LineTest {
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
 
-			line.setSquare(square1, square2, square3);
+			line.setLine(square1, square2, square3);
 
 			square1.setMark(Mark.CIRCLE);
 			square2.setMark(Mark.CIRCLE);
@@ -35,7 +35,7 @@ public class LineTest {
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
 
-			line.setSquare(square1, square2, square3);
+			line.setLine(square1, square2, square3);
 
 			square1.setMark(Mark.CROSS);
 			square2.setMark(Mark.CROSS);
@@ -52,7 +52,7 @@ public class LineTest {
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
 
-			line.setSquare(square1, square2, square3);
+			line.setLine(square1, square2, square3);
 
 			square1.setMark(Mark.CIRCLE);
 			square2.setMark(Mark.CROSS);
@@ -63,5 +63,4 @@ public class LineTest {
 			assertThat(actual, is(expected_result));
 		}
 	}
-
 }
