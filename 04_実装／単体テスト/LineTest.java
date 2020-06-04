@@ -11,13 +11,13 @@ public class LineTest {
 		Line line = new Line();
 
 		@Test
-		public void testLine_01CIRCLEが1列以上揃う時() {
+		public void testLine_1_1CIRCLEが1列以上揃う時() {
 
 			Square square1 = new Square(1, 1);
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
 
-			line.setSquare(square1, square2, square3);
+			line.setLine(square1, square2, square3);
 
 			square1.setMark(Mark.CIRCLE);
 			square2.setMark(Mark.CIRCLE);
@@ -30,12 +30,12 @@ public class LineTest {
 		}
 
 		@Test
-		public void testLine_02CROSSが1列以上揃う時() {
+		public void testLine_1_2CROSSが1列以上揃う時() {
 			Square square1 = new Square(1, 1);
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
 
-			line.setSquare(square1, square2, square3);
+			line.setLine(square1, square2, square3);
 
 			square1.setMark(Mark.CROSS);
 			square2.setMark(Mark.CROSS);
@@ -47,12 +47,12 @@ public class LineTest {
 		}
 
 		@Test
-		public void testLine_03同じマークがそろわない時() {
+		public void testLine_1_3同じマークがそろわない時() {
 			Square square1 = new Square(1, 1);
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
 
-			line.setSquare(square1, square2, square3);
+			line.setLine(square1, square2, square3);
 
 			square1.setMark(Mark.CIRCLE);
 			square2.setMark(Mark.CROSS);
@@ -63,5 +63,4 @@ public class LineTest {
 			assertThat(actual, is(expected_result));
 		}
 	}
-
 }
