@@ -20,7 +20,7 @@ public class Line {
 		return false;
 	}
 
-	public void setSquare(Square square1, Square square2, Square square3) {
+	public void setLine(Square square1, Square square2, Square square3) {
 		squares[0] = square1;
 		squares[1] = square2;
 		squares[2] = square3;
