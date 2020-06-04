@@ -1,4 +1,4 @@
-package Sanmoku;
+package sanmoku;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -6,38 +6,39 @@ import static org.hamcrest.CoreMatchers.*;
 import org.junit.Test;
 
 public class TurnTest {
-	Player firstPlayer=new Player(Mark.CIRCLE, "先攻");
-	Player secondPlayer=new Player(Mark.CROSS, "後攻");
 	@Test
-	public void test1_1(){
-		Turn turn = new Turn(firstPlayer);
-		Player a = turn.getPlayer();
-		assertThat(a,is(firstPlayer));
+	public void test1() {
+		Board b1=new Board();
+		Turn t1=new Turn();
+		t1.setPosition(b1,0,0,"×");
+		
+		Turn t2=new Turn();
+		boolean i=t2.setPosition(b1,0,0,"〇");
+		
+		assertThat(i, is(false));
 	}
 	
 	@Test
-	public void test1_2(){
-		Turn turn = new Turn(secondPlayer);
-		Player a = turn.getPlayer();
-		assertThat(a,is(secondPlayer));
+	public void test2() {
+		Board b1=new Board();
+		Turn t1=new Turn();
+		boolean i=t1.setPosition(b1,0,3,"〇");
+		
+		//Turn t2=new Turn();
+		//boolean i=t2.setPosition(b1,0,0,"〇");
+		
+		assertThat(i, is(false));
 	}
 	
 	@Test
-	public void test2_1(){
-		Turn turn = new Turn(firstPlayer);
-		Board board = new Board();
-		board.setMark(1, 1, Mark.CIRCLE);
-		turn.requestXY(board);
-	}
-	
-	@Test
-	public void test3_1(){
-		Turn turn = new Turn(firstPlayer);
-		Board board = new Board();
-		turn.requestXY(board);
-		turn.setMark();
-		Square s=board.getSquare(1, 1);
-		Mark m=s.getMark();
-		assertThat(m,is(Mark.CIRCLE));
-	}
+	public void test3() {
+		Board b1=new Board();
+		Turn t1=new Turn();
+		boolean i=t1.setPosition(b1,0,0,"〇");
+		
+		//Turn t2=new Turn();
+		//boolean i=t2.setPosition(b1,0,0,"〇");
+		
+		assertThat(i, is(true));
+		}
 }
