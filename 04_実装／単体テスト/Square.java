@@ -7,31 +7,36 @@ public class Square {
 	private Mark mark;
 
 	public int getX() {
-		return 0;
+		return x;
 	}
 
 	public int getY() {
-		return 0;
+		return y;
 	}
 
 	public Mark getMark() {
-		return null;
+		return mark;
 	}
 
 	public boolean canPlace() {
-		return false;
+		if(mark==null) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
-	public void setMark(Mark make) {
-
+	public void setMark(Mark mark) {
+		this.mark=mark;
 	}
 
 	public Square getSquare() {
-		return null;
+		return this;
 	}
 
 	public Square(int x, int y) {
-
+		this.x=x;
+		this.y=y;
 	}
 
 }
