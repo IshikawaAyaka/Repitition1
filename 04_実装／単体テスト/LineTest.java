@@ -11,7 +11,7 @@ public class LineTest {
 		Line line = new Line();
 
 		@Test
-		public void testLine_01CIRCLEが1列以上揃う時() {
+		public void testLine_1_1CIRCLEが1列以上揃う時() {
 
 			Square square1 = new Square(1, 1);
 			Square square2 = new Square(2, 2);
@@ -30,7 +30,7 @@ public class LineTest {
 		}
 
 		@Test
-		public void testLine_02CROSSが1列以上揃う時() {
+		public void testLine_1_2CROSSが1列以上揃う時() {
 			Square square1 = new Square(1, 1);
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
@@ -47,7 +47,7 @@ public class LineTest {
 		}
 
 		@Test
-		public void testLine_03同じマークがそろわない時() {
+		public void testLine_1_3同じマークがそろわない時() {
 			Square square1 = new Square(1, 1);
 			Square square2 = new Square(2, 2);
 			Square square3 = new Square(3, 3);
