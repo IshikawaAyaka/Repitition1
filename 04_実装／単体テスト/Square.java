@@ -1,4 +1,4 @@
-package tictactoe;
+package Sanmoku;
 
 public class Square {
 
@@ -7,6 +7,12 @@ public class Square {
 	private int y;
 
 	private Mark mark = Mark.NONE;
+	
+	public Square(int x, int y) {
+		this.x=x;
+		this.y=y;
+	}
+
 
 	public int getX() {
 		return x;
@@ -36,9 +42,5 @@ public class Square {
 		return this;
 	}
 
-	public Square(int x, int y) {
-		this.x=x;
-		this.y=y;
-	}
 
 }
