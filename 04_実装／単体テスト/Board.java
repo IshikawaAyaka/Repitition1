@@ -12,7 +12,7 @@ public class Board {
 			}
 		}
 
-		// Lineオブジェクトを８本生成する。箱を用意する。
+		// Lineオブジェクトを８本生成する。
 		for (int i = 0; i < 8; i++) {
 			lines[i] = new Line();
 		}
@@ -52,12 +52,12 @@ public class Board {
 		return false;
 	}
 
-	// Square型の
+	// Turn型のsetMark()メソッドから呼び出す。
 	public void setMark(int x, int y, Mark mark) {
 		squares[x - 1][y - 1].setMark(mark);
 	}
 
-	// Tictactoaから呼び出す。やつ
+	// Tictactoaから呼び出す。
 	public Square getSquare(int x, int y) {
 
 		return squares[x - 1][y - 1];
@@ -71,14 +71,12 @@ public class Board {
 	// ---------
 	// | | | |
 	// ---------
-	// getSquare()ってシーケンス図に書いてあるけど、getMark();を使いました合ってる？
 	public void showBoard() {
 
 		System.out.println("-------");
 		for (int i = 1; i <= 3; i++) {
 			for (int j = 1; j <= 3; j++) {
 				// １マスずつマークを取得。オブジェクトを上記２次元配列で指定する。
-				// これ座標指定の情報足りてる？getSquare で出して、オブジェクトから座標を入れ替える必要はあるか。
 				Mark mark = squares[i-1][j-1].getMark();
 				if (mark == Mark.CIRCLE) {
 					System.out.print("|");
@@ -86,7 +84,7 @@ public class Board {
 				} else if (mark == Mark.CROSS) {
 					System.out.print("|");
 					System.out.print("×");
-				} else { // NONEの場合
+				} else {							 // NONEの場合
 					System.out.print("|");
 					System.out.print(" ");
 				}
@@ -98,13 +96,12 @@ public class Board {
 	}
 
 	// 全てのマスが埋まっているかどうかの確認
-	// getSquare();メソッドの指定だけど、canPlace()メソッドを利用した。
-	// canPlace→空いてたら(null)でtrueを返す。
+	// canPlace→空いてたら(Mark.NONE)でtrueを返す。
 	public boolean isFull() {
 		for (int i = 1; i <= 3; i++) {
 			for (int j = 1; j <= 3; j++) {
 				if (squares[i - 1][j - 1].canPlace()) {
-					return false; // breakしなくてよい？ここで止まるかな
+					return false; 
 				}
 			}
 		}
