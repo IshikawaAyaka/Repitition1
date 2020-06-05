@@ -7,8 +7,8 @@ public class TicTacToe {
 
 	private Board board;
 	private List<Turn> turns = new ArrayList<Turn>();
-	Player firstPlayer;
-	Player secondPlayer;
+	private Player firstPlayer;
+	private Player secondPlayer;
 	
 	public TicTacToe() {
 		board = new Board();
