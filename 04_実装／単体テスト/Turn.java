@@ -63,7 +63,7 @@ public class Turn {
 			this.y = a[1];
 			if(board.canInput(x,y) == true) {
 				break;
-			}else {
+			}else if(1<=x && x<=3 && 1<=y && y<=3){
 				System.out.println("すでに置かれています");
 			}
 		}
