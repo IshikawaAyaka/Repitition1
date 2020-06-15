@@ -1,27 +1,3 @@
-package Sanmoku;
-
-public class Turn {
-	
-	private Player player;
-
-	private Board board;
-	
-	private int x;
-	private int y;
-	
-	
-	public Turn(Player player) {
-		this.player = player;
-	}
-
-	public int getX() {
-		return this.x;
-	}
-	
-	public int getY() {
-		return this.y;
-	}
-	
 package tictactoe;
 
 public class Turn {
